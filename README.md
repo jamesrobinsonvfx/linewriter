@@ -73,3 +73,9 @@ Look at Nuke's Text node options and you'll see a tab called Background. This is
 very useful for when your text is occluding some of your scene, and becomes
 difficult to read. Linewriter adds an optional background behind each line to
 make sure the text stands out.
+
+## Other Features
+
+* Help Card
+* Embedded example setup
+  > Extra > Load Example Setup

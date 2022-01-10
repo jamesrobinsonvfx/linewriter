@@ -23,8 +23,8 @@ adding channel references, since when you RMB > Paste Relative References, it
 tends to blast away everything you had in there already. So instead, you need to
 copy the path to the parm someplace else, and paste it in.
 
-Linewriter uses a single-line string parameter, where this doesn't seem to have
-this issue.
+Linewriter uses a single-line string parameter, where this doesn't seem to be an
+issue.
 
 ### 2. Float values are over-precise
 

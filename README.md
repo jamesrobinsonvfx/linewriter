@@ -40,16 +40,19 @@ also a button under the **Utilities** folder that will run it over all the lines
 at once.
 
 
-### 3. Font artifacts when parenting
+### 3. Font artifacts
 
-Oftentimes you'll make a nice looking overlay, only to have a few B's or D's get
+Sometimes you'll make a nice looking overlay, only to have a few B's or D's get
 their holes filled in. They look fine at the origin, but when parented to the
 camera, they look all wrong.
 
 I'm not sure what the exact cause is (some sort of precision thing I imagine),
-but the solution is super simple: Pack up your Font SOP at the end! All the
-characters with holes will appear as intended (Linewriter does this per-line, as
-well as one final pack at the end).
+but the solution is simple: Pack up your Font SOP at the end. All the
+characters with holes will appear as they did before transforming (Linewriter
+does this per-line, as well as one final pack at the end).
+
+Other times, the artifacts are a direct result of the Font SOP itself. In this
+case, there is also an option to fix these holes, though it does decrease performance.
 
 ### 4. Limited coloring options
 

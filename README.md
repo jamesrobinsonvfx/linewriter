@@ -96,3 +96,9 @@ Check the help card for extra info about each parameter
 > Extra > Load Example Setup
 
 A demo setup is included to show how this node can be used
+
+### Constant Shader
+
+There is a simple constant shader inside that is applied to the all of the 
+linewriter geometry. This ensures it doesn't receive shadows, and that the
+text colors are as bright as possible in the viewport.

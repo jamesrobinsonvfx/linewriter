@@ -4,8 +4,8 @@ Linewriter is a simple SOP that adds some functionality around the built-in Font
 SOP. It is most useful for creating text labels in the viewport for recording
 parameter values when flipbooking wedges etc.
 
-> Compatible with Python 3 versions of Houdini 19.0. If there is enough interest
-> for older versions, I'll post one for H18.5.
+> This node was built in `Houdini 19.0.455`. While there is a version for 
+> Houdini 18.5, it will look and perform best in Houdini 19+
 
 > On macOS with UI scaling on, some parameters may not line up in a pretty way in
 > Houdni 19.0. This has been reported to SideFX.
@@ -79,6 +79,20 @@ make sure the text stands out.
 
 ## Other Features
 
-* Help Card
-* Embedded example setup
-  > Extra > Load Example Setup
+### Transform into Camera
+
+If you provide a camera object, you can parent your text to a camera directly
+in SOPs.
+
+Look through the camera, and hit enter in the viewport to activate the transform 
+handle and move the text into place.
+
+### Help Card
+
+Check the help card for extra info about each parameter
+
+###  Embedded example setup
+
+> Extra > Load Example Setup
+
+A demo setup is included to show how this node can be used

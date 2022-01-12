@@ -10,6 +10,24 @@ parameter values when flipbooking wedges etc.
 > On macOS with UI scaling on, some parameters may not line up in a pretty way in
 > Houdni 19.0. This has been reported to SideFX.
 
+- [Linewriter](#linewriter)
+  - [Problems with built-in Font SOP](#problems-with-built-in-font-sop)
+    - [1. Font SOP doesn't play well with channel references](#1-font-sop-doesnt-play-well-with-channel-references)
+    - [2. Float values are over-precise](#2-float-values-are-over-precise)
+    - [3. Font artifacts](#3-font-artifacts)
+    - [4. Limited coloring options](#4-limited-coloring-options)
+    - [5. Performance](#5-performance)
+    - [6. No background color options](#6-no-background-color-options)
+  - [Other Features](#other-features)
+    - [Transform into Camera](#transform-into-camera)
+    - [Help Card](#help-card)
+    - [Embedded example setup](#embedded-example-setup)
+    - [Constant Shader](#constant-shader)
+  - [Installation](#installation)
+    - [Method 1: Houdini Packages](#method-1-houdini-packages)
+    - [Method 2: Manual Installation](#method-2-manual-installation)
+    - [Method 3: Install to Current Hipfile](#method-3-install-to-current-hipfile)
+
 
 ## Problems with built-in Font SOP
 
@@ -102,3 +120,52 @@ A demo setup is included to show how this node can be used
 There is a simple constant shader inside that is applied to the all of the 
 linewriter geometry. This ensures it doesn't receive shadows, and that the
 text colors are as bright as possible in the viewport.
+
+## Installation
+
+### Method 1: Houdini Packages
+
+Installation is simple with [Houdini Packages](https://www.sidefx.com/docs/houdini/ref/plugins.html).
+
+1. Download the latest release [here](https://github.com/jamesrobinsonvfx/linewriter/releases/latest/download/linewriter.zip).
+   > Optionally, you can clone this repo if you'd like instead.
+2. Navigate to your houdini user preferences folder and into the `packages`
+   directory (if the `packages` folder does not exist, create it).
+   ```
+   $HOUDINI_USER_PREF_DIR/packages
+   ```
+3. Copy the zip archive here and extact its contents.
+4. Move (or copy) the `linewriter.json` file to the parent directory
+   `$HOUDINI_USER_PREF_DIR/packages`. Your `packages` folder should now look
+   something like this:
+```
+packages/
+├── linewriter
+│   ├── houdini18.5
+│   │   └── hda
+│   │       └── jamesr_linewriter.hda
+│   └── houdini19.0
+│       └── hda
+│           └── jamesr_linewriter.hda
+└── linewriter.json
+```
+
+5. Launch Houdini.
+
+
+### Method 2: Manual Installation
+
+1. Download the latest release [here](https://github.com/jamesrobinsonvfx/linewriter/releases/latest/download/linewriter.zip).
+   > Optionally, you can clone this repo if you'd like instead.
+2. Navigate to wherever you load digital assets from
+    > `$HIP/otls`, `$HOUDINI_USER_PREF_DIR/hda`, `$HOUDINI_USER_PREF_DIR/otls` etc.
+3. Copy `jamesr_linewriter.hda` from `houdiniX.Y/hda` into the location you chose in Step 2.
+
+4. Launch Houdini.
+
+### Method 3: Install to Current Hipfile
+
+1. Launch Houdini.
+2. From the main title bar, select **Assets > Install Asset Library**.
+3. Navigate to wherever you downloaded the repo/.zip archive and select the HDA for your version of Houdini from `houdiniX.Y/hda/jamesr_linewriter.hda`
+4. Select **Install** or **Install and Create**.

@@ -4,8 +4,8 @@ Linewriter is a simple SOP that adds some functionality around the built-in Font
 SOP. It is most useful for creating text labels in the viewport for recording
 parameter values when flipbooking wedges etc.
 
-> Compatible with Python 3 versions of Houdini 19.0. If there is enough interest
-> for older versions, I'll post one for H18.5.
+> This node was built in `Houdini 19.0.455`. While there is a version for 
+> Houdini 18.5, it will look and perform best in Houdini 19+
 
 > On macOS with UI scaling on, some parameters may not line up in a pretty way in
 > Houdni 19.0. This has been reported to SideFX.
@@ -40,16 +40,19 @@ also a button under the **Utilities** folder that will run it over all the lines
 at once.
 
 
-### 3. Font artifacts when parenting
+### 3. Font artifacts
 
-Oftentimes you'll make a nice looking overlay, only to have a few B's or D's get
+Sometimes you'll make a nice looking overlay, only to have a few B's or D's get
 their holes filled in. They look fine at the origin, but when parented to the
 camera, they look all wrong.
 
 I'm not sure what the exact cause is (some sort of precision thing I imagine),
-but the solution is super simple: Pack up your Font SOP at the end! All the
-characters with holes will appear as intended (Linewriter does this per-line, as
-well as one final pack at the end).
+but the solution is simple: Pack up your Font SOP at the end. All the
+characters with holes will appear as they did before transforming (Linewriter
+does this per-line, as well as one final pack at the end).
+
+Other times, the artifacts are a direct result of the Font SOP itself. In this
+case, there is also an option to fix these holes, though it does decrease performance.
 
 ### 4. Limited coloring options
 
@@ -76,6 +79,20 @@ make sure the text stands out.
 
 ## Other Features
 
-* Help Card
-* Embedded example setup
-  > Extra > Load Example Setup
+### Transform into Camera
+
+If you provide a camera object, you can parent your text to a camera directly
+in SOPs.
+
+Look through the camera, and hit enter in the viewport to activate the transform 
+handle and move the text into place.
+
+### Help Card
+
+Check the help card for extra info about each parameter
+
+###  Embedded example setup
+
+> Extra > Load Example Setup
+
+A demo setup is included to show how this node can be used

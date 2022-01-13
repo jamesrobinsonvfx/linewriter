@@ -51,7 +51,7 @@ goes over this more, but in short - a lot of times you see what should be a simp
 parm value like `0.025` being represented in a string parm as
 `0.025000000000000001`. This is distracting, and wastes a lot of on-screen space.
 
-Each line of line-writer has a button [button pic] that tries to "ftrimify" your
+Each line of line-writer has a button that tries to "ftrimify" your
 line. It looks for each `ch()` or `chs()`, and wraps them up in an `ftrim()`.
 This helps cut down the numbers to max of six floating point digits. There is
 also a button under the **Utilities** folder that will run it over all the lines

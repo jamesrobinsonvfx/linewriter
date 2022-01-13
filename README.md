@@ -42,12 +42,12 @@ adding channel references, since when you RMB > Paste Relative References, it
 tends to blast away everything you had in there already. So instead, you need to
 copy the path to the parm someplace else, and paste it in.
 
-https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/channelref-font-sop.mp4
+https://user-images.githubusercontent.com/32847792/149262115-00cd1cbb-0c6c-432c-b477-ebeea6b2190f.mp4
 
 Linewriter uses a single-line string parameter, where this doesn't seem to be an
 issue.
 
-https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/channelref-linewriter.mp4
+https://user-images.githubusercontent.com/32847792/149262143-89762629-f750-4b89-a08e-b914d103eef1.mp4
 
 ### 2. Float values are over-precise
 
@@ -58,6 +58,7 @@ parm value like `0.025` being represented in a string parm as
 
 Each line of line-writer has a button that tries to "ftrimify" your line.
 [![ftrimify line](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/ftrimify-line.png)](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/ftrimify-line.png)
+
 It looks for each `ch()` or `chs()`, and wraps them up in an `ftrim()`.
 This helps cut down the numbers to max of six floating point digits. There is
 also a button under the **Extra** folder that will run it over all the lines
@@ -65,7 +66,7 @@ at once.
 
 [![ftrimify all](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/ftrimify-all.png)](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/ftrimify-all.png)
 
-https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/ftrimify.mp4
+https://user-images.githubusercontent.com/32847792/149262187-36ec0f51-7b69-4dc5-813d-9fff901b68ff.mp4
 
 ### 3. Font artifacts
 
@@ -81,7 +82,7 @@ does this per-line, as well as one final pack at the end).
 Other times, the artifacts are a direct result of the Font SOP itself. In this
 case, there is also an option to fix these holes, though it does decrease performance.
 
-https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/hole-fix.mp4
+https://user-images.githubusercontent.com/32847792/149262211-3e50d777-824b-4f8f-86fc-3806f6ba9d90.mp4
 
 ### 4. Limited coloring options
 
@@ -120,7 +121,7 @@ in SOPs from Linewriter.
 Look through the camera, select the Linewriter node, and hit enter in the
 viewport to activate the transform handle and move the text into place.
 
-https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/cam-xform.mp4
+https://user-images.githubusercontent.com/32847792/149262238-261cb9c3-961c-4554-adff-f332080d19f2.mp4
 
 ### Help Card
 

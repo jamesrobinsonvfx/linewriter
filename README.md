@@ -1,5 +1,7 @@
 [![Cover Photo](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/preview.jpg)](https://vimeo.com/665385717)
 
+> [Get Linewriter](https://github.com/jamesrobinsonvfx/linewriter/releases/latest/download/linewriter.zip)
+
 # Linewriter
 
 Linewriter is a simple SOP that adds some functionality around the built-in Font

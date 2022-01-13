@@ -42,12 +42,12 @@ adding channel references, since when you RMB > Paste Relative References, it
 tends to blast away everything you had in there already. So instead, you need to
 copy the path to the parm someplace else, and paste it in.
 
-<video width="720" height="405" autoplay loop muted playsinline src="https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/channelref-font-sop.mp4"></video>
+https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/channelref-font-sop.mp4
 
 Linewriter uses a single-line string parameter, where this doesn't seem to be an
 issue.
 
-<video width="720" height="405" autoplay loop muted playsinline src="https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/channelref-linewriter.mp4"></video>
+https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/channelref-linewriter.mp4
 
 ### 2. Float values are over-precise
 
@@ -65,7 +65,7 @@ at once.
 
 [![ftrimify all](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/ftrimify-all.png)](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/ftrimify-all.png)
 
-<video width="720" height="405" autoplay loop muted playsinline src="https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/ftrimify.mp4"></video>
+https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/ftrimify.mp4
 
 ### 3. Font artifacts
 
@@ -81,7 +81,7 @@ does this per-line, as well as one final pack at the end).
 Other times, the artifacts are a direct result of the Font SOP itself. In this
 case, there is also an option to fix these holes, though it does decrease performance.
 
-<video width="720" height="405" autoplay loop muted playsinline src="https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/hole-fix.mp4"></video>
+https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/hole-fix.mp4
 
 ### 4. Limited coloring options
 
@@ -120,7 +120,7 @@ in SOPs from Linewriter.
 Look through the camera, select the Linewriter node, and hit enter in the
 viewport to activate the transform handle and move the text into place.
 
-<video width="720" height="405" autoplay loop muted playsinline src="https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/cam-xform.mp4"></video>
+https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/cam-xform.mp4
 
 ### Help Card
 

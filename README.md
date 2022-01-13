@@ -1,10 +1,12 @@
+[![Cover Photo](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/preview.jpg)](https://vimeo.com/665385717)
+
 # Linewriter
 
 Linewriter is a simple SOP that adds some functionality around the built-in Font
 SOP. It is most useful for creating text labels in the viewport for recording
 parameter values when flipbooking wedges etc.
 
-> This node was built in `Houdini 19.0.455`. While there is a version for 
+> This node was built in `Houdini 19.0.455`. While there is a version for
 > Houdini 18.5, it will look and perform best in Houdini 19+
 
 > On macOS with UI scaling on, some parameters may not line up in a pretty way in
@@ -16,8 +18,8 @@ parameter values when flipbooking wedges etc.
     - [2. Float values are over-precise](#2-float-values-are-over-precise)
     - [3. Font artifacts](#3-font-artifacts)
     - [4. Limited coloring options](#4-limited-coloring-options)
-    - [5. Performance](#5-performance)
-    - [6. No background color options](#6-no-background-color-options)
+    - [5. No background color options](#5-no-background-color-options)
+    - [6. Performance](#6-performance)
   - [Other Features](#other-features)
     - [Transform into Camera](#transform-into-camera)
     - [Help Card](#help-card)
@@ -27,7 +29,6 @@ parameter values when flipbooking wedges etc.
     - [Method 1: Houdini Packages](#method-1-houdini-packages)
     - [Method 2: Manual Installation](#method-2-manual-installation)
     - [Method 3: Install to Current Hipfile](#method-3-install-to-current-hipfile)
-
 
 ## Problems with built-in Font SOP
 
@@ -41,8 +42,12 @@ adding channel references, since when you RMB > Paste Relative References, it
 tends to blast away everything you had in there already. So instead, you need to
 copy the path to the parm someplace else, and paste it in.
 
+<video width="720" height="405" autoplay loop muted playsinline src="https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/channelref-font-sop.mp4"></video>
+
 Linewriter uses a single-line string parameter, where this doesn't seem to be an
 issue.
+
+<video width="720" height="405" autoplay loop muted playsinline src="https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/channelref-linewriter.mp4"></video>
 
 ### 2. Float values are over-precise
 
@@ -51,12 +56,16 @@ goes over this more, but in short - a lot of times you see what should be a simp
 parm value like `0.025` being represented in a string parm as
 `0.025000000000000001`. This is distracting, and wastes a lot of on-screen space.
 
-Each line of line-writer has a button that tries to "ftrimify" your
-line. It looks for each `ch()` or `chs()`, and wraps them up in an `ftrim()`.
+Each line of line-writer has a button that tries to "ftrimify" your line.
+[![ftrimify line](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/ftrimify-line.png)](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/ftrimify-line.png)
+It looks for each `ch()` or `chs()`, and wraps them up in an `ftrim()`.
 This helps cut down the numbers to max of six floating point digits. There is
-also a button under the **Utilities** folder that will run it over all the lines
+also a button under the **Extra** folder that will run it over all the lines
 at once.
 
+[![ftrimify all](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/ftrimify-all.png)](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/ftrimify-all.png)
+
+<video width="720" height="405" autoplay loop muted playsinline src="https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/ftrimify.mp4"></video>
 
 ### 3. Font artifacts
 
@@ -72,13 +81,24 @@ does this per-line, as well as one final pack at the end).
 Other times, the artifacts are a direct result of the Font SOP itself. In this
 case, there is also an option to fix these holes, though it does decrease performance.
 
+<video width="720" height="405" autoplay loop muted playsinline src="https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/hole-fix.mp4"></video>
+
 ### 4. Limited coloring options
 
-If you have a few key lines you want to stand out, you have to either make a few
+If you have a few key lines that you want to stand out, you have to either make a few
 extra Font SOPs, or group the characters manually and color them later.
 Linewriter lets you set a base color for the whole block, and override per-line as needed.
 
-### 5. Performance
+### 5. No background color options
+
+Look at Nuke's Text node options and you'll see a tab called Background. This is
+very useful for when your text is occluding some of your scene, and becomes
+difficult to read. Linewriter adds an optional background behind each line to
+make sure the text stands out.
+
+[![Background and Colors](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/title-card-hou.png)](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/title-card-hou.png)
+
+### 6. Performance
 
 In a single Font SOP, if even one of your referenced parameters is animated
 (time-dependent), it will cause the whole thing to recook each frame. For single
@@ -88,22 +108,19 @@ whole slew of data for your overlay, this can be a little bit of a bottleneck.
 Linewriter optimizes this by splitting out lines that are time-dependent from
 the ones that aren't, so only lines with animated data will recook.
 
-### 6. No background color options
-
-Look at Nuke's Text node options and you'll see a tab called Background. This is
-very useful for when your text is occluding some of your scene, and becomes
-difficult to read. Linewriter adds an optional background behind each line to
-make sure the text stands out.
+[![Split Time Dependent](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/split-timedep-lines.png)](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/split-timedep-lines.png)
 
 ## Other Features
 
 ### Transform into Camera
 
 If you provide a camera object, you can parent your text to a camera directly
-in SOPs.
+in SOPs from Linewriter.
 
-Look through the camera, and hit enter in the viewport to activate the transform 
-handle and move the text into place.
+Look through the camera, select the Linewriter node, and hit enter in the
+viewport to activate the transform handle and move the text into place.
+
+<video width="720" height="405" autoplay loop muted playsinline src="https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/cam-xform.mp4"></video>
 
 ### Help Card
 
@@ -115,10 +132,12 @@ Check the help card for extra info about each parameter
 
 A demo setup is included to show how this node can be used
 
+[![Load Example Setup](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/load-example-setup.png)](https://www.jamesrobinsonvfx.com/assets/projects/linewriter/images/load-example-setup.png)
+
 ### Constant Shader
 
-There is a simple constant shader inside that is applied to the all of the 
-linewriter geometry. This ensures it doesn't receive shadows, and that the
+There is a simple constant shader inside that is applied to the all of the
+Linewriter geometry. This ensures that it doesn't receive shadows, and that the
 text colors are as bright as possible in the viewport.
 
 ## Installation
@@ -128,7 +147,7 @@ text colors are as bright as possible in the viewport.
 Installation is simple with [Houdini Packages](https://www.sidefx.com/docs/houdini/ref/plugins.html).
 
 1. Download the latest release [here](https://github.com/jamesrobinsonvfx/linewriter/releases/latest/download/linewriter.zip).
-   > Optionally, you can clone this repo if you'd like instead.
+   > You can clone the repo if you'd like instead.
 2. Navigate to your houdini user preferences folder and into the `packages`
    directory (if the `packages` folder does not exist, create it).
    ```
@@ -152,11 +171,10 @@ packages/
 
 5. Launch Houdini.
 
-
 ### Method 2: Manual Installation
 
 1. Download the latest release [here](https://github.com/jamesrobinsonvfx/linewriter/releases/latest/download/linewriter.zip).
-   > Optionally, you can clone this repo if you'd like instead.
+   > You can clone the repo if you'd like instead.
 2. Navigate to wherever you load digital assets from
     > `$HIP/otls`, `$HOUDINI_USER_PREF_DIR/hda`, `$HOUDINI_USER_PREF_DIR/otls` etc.
 3. Copy `jamesr_linewriter.hda` from `houdiniX.Y/hda` into the location you chose in Step 2.
@@ -167,5 +185,5 @@ packages/
 
 1. Launch Houdini.
 2. From the main title bar, select **Assets > Install Asset Library**.
-3. Navigate to wherever you downloaded the repo/.zip archive and select the HDA for your version of Houdini from `houdiniX.Y/hda/jamesr_linewriter.hda`
+3. Navigate to wherever you downloaded the repo/zip archive and select the HDA for your version of Houdini from `houdiniX.Y/hda/jamesr_linewriter.hda`
 4. Select **Install** or **Install and Create**.
